@@ -1,0 +1,19 @@
+<h1>New Article</h1>
+
+<%= render "form", article: @article%>
+
+<% if current_user %>
+  <%= button_to 'Logout', session_path(current_user), method: :delete %>
+<% end %>
+
+<ul>
+  <li><%= link_to 'View All Articles',  articles_path(current_user) %></li>
+</ul>
+
+<ul>
+  <li><%= "user-id: #{current_user.id}" %></li>
+</ul>
+
+<ul>
+  <li><%= "user-name: #{current_user.username}" %></li>
+</ul>
